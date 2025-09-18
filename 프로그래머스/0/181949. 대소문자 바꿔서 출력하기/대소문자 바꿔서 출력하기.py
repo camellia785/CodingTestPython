@@ -7,4 +7,6 @@ for s in str:
         s = s.upper()
         
     print(s, end='')
-    
+
+# ‼️ 다른사람 풀이 - swapcase()라는 대소문자 변환 함수 존재
+# print(input().swapcase())
