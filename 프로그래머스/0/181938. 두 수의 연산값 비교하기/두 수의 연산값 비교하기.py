@@ -1,3 +1,2 @@
 def solution(a, b):
-    a, b = str(a), str(b)
-    return max(int(a+b), 2*int(a)*int(b))
+    return max(int(str(a)+str(b)), 2*a*b)
