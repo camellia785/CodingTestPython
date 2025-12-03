@@ -1,8 +1,5 @@
-import re
-
 def solution(my_string):
-    # 정규표현식 '[0-9]+' => "숫자가 1개 이상 연속된 것"을 찾으라
-    numbers = re.findall(r'[0-9]+', my_string)
+    s = ''.join(i if i.isdigit() else ' ' for i in my_string)
     
-    # 찾은 문자열 숫자들을 정수(int)로 바꿔서 모두 더함
-    return sum(map(int, numbers))
+    # 숫자와 공백만 남게됨 -> 공백 기준으로 s를 잘라서 int씌우고 다 더하기
+    return sum(int(i) for i in s.split())
