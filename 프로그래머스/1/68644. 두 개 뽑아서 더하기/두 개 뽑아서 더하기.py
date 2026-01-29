@@ -1,21 +1,9 @@
 def solution(numbers):
     answer = []
-    dupli = []
     
-    # 두개 뽑고 더하고
-    for i in numbers:
-        for j in numbers:
-            answer.append(i+j)
-    
-    # 자기 두번 더해서 나온거 제외하기 (단순차집합 하면 다 빠지니까 remove하기)
-    for k in numbers:
-        dupli.append(2*k)
-    
-    for x in dupli:
-        if x in answer:
-            answer.remove(x)
-    
-    # 마지막 중복제거
-    answer = list(set(answer))
+    #nC2 로 나오는애들 더하는거 구하는법
+    for i in range(len(numbers)): # 0,1,2,3,4
+        for j in range(i+1, len(numbers)):
+            answer.append(numbers[i]+numbers[j])
 
-    return sorted(answer)
+    return sorted(list(set(answer)))
