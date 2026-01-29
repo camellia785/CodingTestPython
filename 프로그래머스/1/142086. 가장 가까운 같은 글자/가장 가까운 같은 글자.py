@@ -1,16 +1,15 @@
 def solution(s):
-    answer = []
-    last_index = {} # 문자별 마지막 등장위치(숫자)
+    result = []
+    last_index = {} #딕셔너리 (2차원 넣을생각하기)
     
-    for i in range(len(s)):
-        char = s[i]
-        
-        if char not in last_index:
-            answer.append(-1)
+    for i, char in enumerate(s): # enumerate로 인덱스, 문자 한번에 가져오기
+        if char in last_index:
+            result.append(i - last_index[char])
         else:
-            answer.append(i - last_index[char])
-            
-        # 현재위치로 last_index 갱신
+            result.append(-1)
+        # 갱신    
         last_index[char] = i
         
-    return answer
+    return result
+        
+        
