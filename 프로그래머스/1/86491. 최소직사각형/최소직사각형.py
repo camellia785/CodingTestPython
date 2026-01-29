@@ -1,0 +1,18 @@
+def solution(sizes):
+    max_w = 0
+    max_h = 0
+    
+    for w, h in sizes:
+        if w >= h:
+            big = w
+            small = h
+        else:
+            big = h
+            small = w
+        
+        if big >= max_w:
+            max_w = big
+        if small >= max_h:
+            max_h = small
+    
+    return max_w*max_h
